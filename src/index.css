@@ -1,0 +1,57 @@
+/* src/index.css */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --nyt-black: #121212;
+  --nyt-gray: #727272;
+  --nyt-light-gray: #e2e2e2;
+  --nyt-bg: #f7f4ef;
+  --nyt-white: #ffffff;
+  --nyt-accent: #c00000;
+  --nyt-blue: #326891;
+  --nyt-green: #538d4e;
+  --nyt-gold: #b59f3b;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-gothic: 'UnifrakturMaguntia', cursive;
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--nyt-bg);
+  color: var(--nyt-black);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--nyt-blue); }
+
+button { font-family: var(--font-serif); cursor: pointer; }
+
+/* TICKER ANIMATION */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* WORDLE TILE FLIP */
+@keyframes flip {
+  0%   { transform: rotateX(0); }
+  50%  { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+
+.tile-flip { animation: flip 0.4s ease forwards; }
+
+/* PAGE FADE IN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: fadeIn 0.25s ease forwards; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--nyt-bg); }
+::-webkit-scrollbar-thumb { background: #bbb; border-radius: 3px; }

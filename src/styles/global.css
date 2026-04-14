@@ -1,0 +1,44 @@
+:root {
+  --nyt-black: #121212;
+  --nyt-gray: #727272;
+  --nyt-light-gray: #e2e2e2;
+  --nyt-bg: #f7f4ef;
+  --nyt-white: #ffffff;
+  --nyt-accent: #cc0000;
+  --nyt-blue: #326891;
+  --nyt-green: #1a7a1a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--nyt-bg);
+  color: var(--nyt-black);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Wordle flip */
+@keyframes flip {
+  0%   { transform: rotateX(0deg); }
+  50%  { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+.tile-flip { animation: flip 0.5s ease forwards; }
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.4s ease forwards; }
